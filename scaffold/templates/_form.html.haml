@@ -1,4 +1,4 @@
-= form_for(@<%= singular_name %>) do |f|
+= simple_form_for(@<%= singular_name %>) do |f|
   - if @<%= singular_name %>.errors.any?
     #errorExplanation
       %h2= "#{pluralize(@<%= singular_name %>.errors.count, 'error')} prohibited this user from being saved:"
@@ -7,11 +7,8 @@
         %li= msg
   
 <% for attribute in attributes -%>
-  .field
-    = f.label :<%= attribute.name %>
-    %br
-    = f.<%= attribute.field_type %> :<%= attribute.name %>
+  .field= f.input <%= attribute.name %>
 <% end -%>
 
   .actions
-    = f.submit
+    = f.button :submit

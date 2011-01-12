@@ -1,5 +1,5 @@
 %h1= t('.title')
-%p= link_to t('.new_<%= singular_name %>'), new_<%= singular_name %>_path
+%p= link_to t('.new_<%= singular_name %>'), [:new, :<%= singular_name %>]
 
 %table
   %thead
@@ -11,7 +11,7 @@
   
   %tbody
     - for <%= singular_name %> in @<%= plural_name %>
-      %tr{ :class => cycle(:odd, :even) }
+      %tr
 <% for attribute in attributes -%>
         %td= <%= singular_name %>.<%= attribute.name %>
 <% end -%>
