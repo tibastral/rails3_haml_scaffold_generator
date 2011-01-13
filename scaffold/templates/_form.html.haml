@@ -7,7 +7,7 @@
         %li= msg
   
 <% for attribute in attributes -%>
-  .field= f.input <%= attribute.name %>
+  .field= f.input :<%= attribute.name %>
 <% end -%>
 
   .actions
